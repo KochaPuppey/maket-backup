@@ -1328,7 +1328,7 @@ button {
     display: flex !important;
   }
   .price__header {
-    display: none;
+    display: none !important;
   }
   .price-row {
     display: flex !important;
@@ -1466,7 +1466,7 @@ button {
     overflow: visible !important;
   }
   .swiper_third .swiper-slide {
-    display: block !important;
+    display: grid !important;
     width: 100% !important;
     margin: 0 !important;
     height: auto !important;
