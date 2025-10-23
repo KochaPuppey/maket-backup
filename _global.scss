@@ -1,0 +1,30 @@
+
+body {
+  background-color: #F8F8F8;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 308px 1fr;
+  grid-template-rows: 1fr 65px;
+  min-height: 100vh;
+  grid-template-areas:
+  "sidebar main"
+  ". footer";
+  gap:0;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: white;
+}
+
+.main {
+  grid-area: main;
+  background-color: #F8F8F8;
+}
+
+.footer__main {
+  grid-area: footer;
+  background-color: #F8F8F8;
+}

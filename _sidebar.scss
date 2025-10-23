@@ -1,0 +1,396 @@
+.sidebar {
+  grid-area: sidebar;
+  background-color: white;
+  position: fixed;
+  &__header {
+display: flex;
+  }
+}
+
+.sidebar-close {
+  width: 40px;
+  height: 40px;
+  background-image: url("img/close.svg");
+  background-repeat: no-repeat;
+  margin: 35px 0 0px 24px;
+  display: none;
+}
+.header__sidebar-group {
+  margin: 30px 118.45px 9px 22px;
+}
+
+.header__group:hover {
+  transform: scale(1.1);
+  transition: background 1s ease, transform 1s ease;
+}
+
+.header__search {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin: 35px 31px 0px 0px;
+  border-radius:50%;
+  background: #FF3E79;
+}
+
+.header__search::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border: 2px solid white;
+  border-radius: 50%;
+  transform: translate(-75%, -75%);
+}
+
+.header__search::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 10px;
+  width: 2px;
+  background: white;
+  transform: translate(82%, 0%) rotate(-35deg);
+}
+
+.header__search:hover{
+  transform: scale(1.1);
+  transition: background 1s ease, transform 1s ease;
+}
+
+.sidebar__menu {
+  width: 100%;
+  margin: 0px;
+  padding: 0;
+  list-style: none;
+  font-family: "TT Lakes", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.sidebar__menu a {
+  display: inline;
+  text-decoration: none;
+  color:black;
+  margin-top: 28.31px;
+  margin-left: 24px;
+}
+.sidebar__menu li:hover {
+  background: linear-gradient(135deg, #e55d87 0%, #5fc3e4 100%);
+}
+
+.sidebar__menu a:focus {
+  color: dimgrey;
+}
+
+.sidebar__menu a::before {
+  position: relative;
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 32px;
+  background-color: #41F6D7;
+  border-radius: 1px;
+  left: -24px;
+  top:10px;
+  opacity: 0;
+}
+
+.sidebar__menu a:focus::before{
+  opacity: 1;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.sidebar__contacts {
+  margin-top: 210px;
+  .contacts_call{
+    margin-left:19px;
+    margin-right: 16px;
+    background-image: url("img/call.svg");
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 41.35px;
+  }
+  .contacts_chat {
+    margin-right: 16px;
+    background-image: url("img/chat.svg");
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 41.35px;
+  }
+  .contacts_profile {
+    background-image: url("img/profile.svg");
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 41.35px;
+  }
+  &_email {
+    font-family: "TT Lakes", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    margin-left:24px;
+    margin-top: 16px;
+  }
+  &_number {
+    font-family: "TT Lakes", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    margin-left:24px;
+    margin-top: 12px;
+  }
+  &_lang {
+    font-family: "TT Lakes", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    margin-left: 24px;
+    margin-top: 40px;
+  }
+}
+
+.sidebar__contacts button:hover {
+  filter: grayscale(80%);
+}
+.popup__call, .popup__chat {
+  display: none;
+}
+.popup__show {
+  display: block;
+  padding-left: 32px;
+  position: fixed;
+  width: 440px;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #FFFFFF;
+  z-index: 1000;
+  box-shadow: 15px 0 50px 0 #868686;
+}
+
+.popup__call__close {
+  position: absolute;
+  top: 32px;
+  left: -70px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: #FF3E79;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 2px;
+    background: #FFFFFF;
+    transform-origin: center;
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  &:hover {
+    background-color: #ff5a8c;
+    transform: scale(1.05);
+  }
+}
+
+.popup__call > form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.popup__call > h2 {
+  font-family: "TT Lakes",sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+
+  &::before {
+    position: relative;
+    content: "";
+    display: inline-block;
+    width: 3px;
+    height: 40px;
+    background-color: #41F6D7;
+    border-radius: 1px;
+    left: -32px;
+    top: 10px;
+  }
+}
+.popup__call a {
+  text-decoration: none;
+  color:#FF3E79;
+}
+
+.popup__call input {
+  display: block;
+  width: 376px;
+  margin: 0;
+  outline: none;
+  border: 1px solid #EAEAEA;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+  font-family: "TT Lakes", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  padding-top: 12px;
+  padding-left: 16px;
+  padding-bottom: 12px;
+}
+.btc-send {
+  display: block;
+  margin-left: auto;
+  position: relative;
+  margin-right: 32px;
+  font-family: "TT Lakes",sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 24px;
+  width: 136px;
+  height: 32px;
+  background: #FF3E79;
+  color: #FFFFFF;
+  border-radius: 100px;
+  text-transform: uppercase;
+
+  &::after {
+    content:"";
+    position: absolute ;
+    width: 8px ;
+    height:8px ;
+    border: 3px solid #FFFFFF ;
+    border-left: 0 ;
+    border-top: 0px ;
+    transform: rotate(-45deg);
+    top:12px;
+    right:15px;
+  }
+}
+
+.btc-send:hover{
+  transform: scale(1.05);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.popup__chat_close {
+  position: absolute;
+  top: 32px;
+  left: -70px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: #FF3E79;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 2px;
+    background: #FFFFFF;
+    transform-origin: center;
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  &:hover {
+    background-color: #ff5a8c;
+    transform: scale(1.05);
+  }
+}
+
+.popup__chat > form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.popup__chat > h2 {
+  font-family: "TT Lakes",sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+
+  &::before {
+    position: relative;
+    content: "";
+    display: inline-block;
+    width: 3px;
+    height: 40px;
+    background-color: #41F6D7;
+    border-radius: 1px;
+    left: -32px;
+    top: 10px;
+  }
+}
+.popup__chat a {
+  text-decoration: none;
+  color:#FF3E79;
+}
+
+.popup__chat input {
+  display: block;
+  width: 376px;
+  margin: 0;
+  outline: none;
+  border: 1px solid #EAEAEA;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+  font-family: "TT Lakes", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  padding-top: 12px;
+  padding-left: 16px;
+  padding-bottom: 12px;
+  margin-top: 16px;
+}
+.popup__chat input:nth-child(1) {
+margin-top: 0;
+}
+
+.popup__chat input[type='text'] {
+height: 118px;
+}
+@media (min-width:768px) and (max-width: 1399px) {
+  .sidebar-close {
+    display: flex;
+  }
+}
